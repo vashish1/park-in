@@ -1,6 +1,6 @@
 FROM heroku/heroku:18-build as build
 
-COPY . /app
+COPY . /app 
 WORKDIR /app
 
 # Setup buildpack
