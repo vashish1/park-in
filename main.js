@@ -170,8 +170,12 @@ if (response.ok) { // if HTTP-status is 200-299
 //     });
 //     return await response.json(); // parses JSON response into native JavaScript objects
 //   }
+var prev=false,curr=false;
+function working(){ 
 
-let items=[];
+};
+
+let ;
 function data(){
     var property = document.getElementById("1");
     if(value==0){
@@ -182,21 +186,24 @@ function data(){
         property.style.backgroundColor = "green";
         value=0;        
    }
-   console.log("stage 1")
-   let obj = {
-       id: 1
-   };
+//    console.log("stage 1")
+//    let obj = {
+//        id: 1
+//    };
    
 //   postData('http://localhost:80/Parking', { id: val })
 //   .then((data) => {
 //     console.log(data); // JSON data parsed by `response.json()` call
 //   });
-// fetch('http://localhost:80/Parking',{method:'GET'})
-fetch('http://localhost:80/Parking',{
-        method: "POST",
-        body: JSON.stringify(obj)
-    },   
-)
+fetch('http://localhost:80/Parking',{method:'GET'})
+.then(res=>res.json())    
+.then(json=>{console.log(json)},
+    console.log("stage 2"))
+// fetch('http://localhost:80/Parking',{
+//         method: "POST",
+//         body: JSON.stringify(obj)
+//     },   
+// )
 }
     // if(value.Boxno==)
 // .then(items=>items[0].boxno);
@@ -224,4 +231,5 @@ fetch('http://localhost:80/Parking',{
 // .then(response => response.json())   
 // .then(json => console.log(json))
 // console.log("Done")
+
 // }

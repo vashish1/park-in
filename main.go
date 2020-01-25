@@ -17,7 +17,7 @@ var c *mongo.Client
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/Parking", parking).Methods("POST")
+	r.HandleFunc("/Parking", parking).Methods("GET","POST")
 	r.HandleFunc("/Parking/{id}", testing).Methods("GET")
 	http.Handle("/", r)
 	http.ListenAndServe(":80", nil)
@@ -36,23 +36,21 @@ func setupResponse(w *http.ResponseWriter, req *http.Request) {
 
 func parking(w http.ResponseWriter, r *http.Request) {
 	setupResponse(&w, r)
-	if (*r).Method == "OPTIONS" {
+	if (r).Method == "OPTIONS" {
 		return
 	}
 	w.Header().Set("Content-Type", "application/json")
-	// switch r.Method {
-	// case "GET":
-	
-	// 	d := db.FetchData(cl)
-	// 	fmt.Println(d)
-	// 	if len(d) != 12 {
-	// 		w.WriteHeader(http.StatusNotFound)
-	// 		w.Write([]byte(`{"error": "not created"}`))
-	// 		return
-	// 	}
-	// 	json.NewEncoder(w).Encode(d)
-	// case "POST":
-
+	switch r.Method {
+	case "GET":
+		d := db.FetchData(cl)
+		fmt.Println(d)
+		if len(d) != 12 {
+			w.WriteHeader(http.StatusNotFound)
+			w.Write([]byte(`{"error": "not created"}`))
+			return
+		}
+		json.NewEncoder(w).Encode(d)
+	case "POST":
 		fmt.Println(r.Header)
 		type use struct {
 			Id int
@@ -71,7 +69,7 @@ func parking(w http.ResponseWriter, r *http.Request) {
 		}
 
 	}
-// }
+}
 
 func testing(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
