@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css?family=Righteous|Ubuntu|Yanone+Kaffeesatz&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+header{
+ 
+    background-image:-webkit-linear-gradient(150deg, rgb(104, 227, 243) 35%,  rgb(66, 221, 248) 35%);
+    min-height: 680px;
+}
+.block1{
+    width:280px;
+    height:100px;
+    margin: auto auto auto auto;
+    padding-top:5rem;
+    padding-bottom: 2rem;
+    
+}
+.block2{
+    width: 256px;
+    height:100px ;
+
+    margin: auto auto auto auto;
+    padding-top: 3rem;
+    padding-bottom:3rem ;
+   
+   
+    
+}
+.block3{
+    width:280px;
+    height:100px;
+    padding-top: 2rem;
+    
+    margin: auto auto auto auto;
+    
+   
+    
+}.block4{
+    width:600px;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 90px auto auto auto;
+    letter-spacing: 0.02rem;
+    font-size: 1.8rem;
+    color:rgb(19, 18, 18);
+    
+    
+
+}
+.block5{
+    float: left;
+    padding:auto;
+    margin: 40px auto auto 480px;
+    /**width: 500px;
+    height: 100px;**/
+    
+
+}
+
+.text{
+    font-family:  'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+    text-transform: capitalize;
+    background: -webkit-linear-gradient(rgb(30, 30, 182), rgb(130, 229, 143));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+ }
+
+.carousel-inner img {
+    width: 40vw;
+    height:50vh;
+    float: left;
+    
+    
+}
+.heading{
+    position:fixed ;
+    float: left;
+    margin-top: 40px;
+    text-shadow:2px 2px grey;
+    
+
+
+}
+a{
+    text-decoration:none ;
+}
+#demo{
+    margin: 40px 50px;
+    float: right;
+}
+.button{
+    
+    
+   
+    color:black ;
+    width: 90px;
+    height: 40px;
+   margin-left: 2rem;;
+    font-size: 1.2rem;
+    padding:0.9rem 1.2rem;
+    text-transform: capitalize;
+    border:none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: white;}
+    
+.button:hover{
+    transform: scale(1.5);
+    transition:linear 2s ease-in-out;
+    text-decoration: none;
+}
+.footer{
+    background-color: rgb(54, 53, 53);
+    min-height: 200px;
+}
+img{
+    margin-top: 0;;
+    width: 50px;
+    height: 50px;
+    margin-left: 40px ;
+}
+.footer-link{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-right:1rem ;
+    color:white;}
+
+   .footer-link:hover{
+    color:grey;}
+.footer-icon{
+    color:white;
+    
+    padding-top: 2rem;
+    font-size: 2rem;
+    margin-top: 60px;
+    margin-right:10px;
+   }
+   .copyright{
+    margin:2rem 3rem;
+    
+    letter-spacing:0.01rem;
+   }
+   .span{
+    color: grey;
+    font-weight: bold;
+   }
+   .links{
+       margin-bottom: 1rem;
+       color: honeydew;
+   }
