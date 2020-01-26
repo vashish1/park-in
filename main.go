@@ -72,6 +72,7 @@ func parking(w http.ResponseWriter, r *http.Request) {
 }
 
 func testing(w http.ResponseWriter, r *http.Request) {
+
 	vars := mux.Vars(r)
 	i := vars["id"]
 	id,err:= strconv.Atoi(i)
@@ -83,3 +84,5 @@ func testing(w http.ResponseWriter, r *http.Request) {
 }
 
 }
+
+

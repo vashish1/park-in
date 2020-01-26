@@ -49,18 +49,43 @@ func FetchData(collection *mongo.Collection) []Data {
 	}
 	return results
 }
+//FetchBYid ............
+func FetchBYid(collection *mongo.Collection,id int) Data{
+	filter := bson.D{primitive.E{Key: "boxno", Value: id}}
+	var result Data
+
+	err := collection.FindOne(context.TODO(), filter).Decode(&result)
+	if err != nil {
+		fmt.Println(err)
+		return result
+	}
+	return result
+}
 
 //UpdateData updates the data of respective slot
 func  UpdateData(c *mongo.Collection, id int) bool {
 
+	var update =bson.D{}
 	filter := bson.D{{"boxno", id}}
-    t:=time.Now()
-	update := bson.D{{
+	t:=time.Now()
+	test:=FetchBYid(c,id)
+	if test.Occupied==false{
+
+		update = bson.D{{
+			"$set", bson.D{
+				{"occupied", true},
+				{"now",t},
+			}},
+		}
+
+	}
+	update = bson.D{{
 		"$set", bson.D{
-			{"occupied", true},
-		{"now",t},
+			{"occupied", false},
+			{"now",t},
 		}},
 	}
+
 
 	updateResult, err := c.UpdateOne(context.TODO(), filter, update)
 	if err != nil {
