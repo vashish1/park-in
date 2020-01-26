@@ -319,7 +319,8 @@ function exit(){
         body: JSON.stringify(obj)
     },
      )
-    
+     window.location.href = "http://www.w3schools.com";
+    // str.link("https://www.w3schools.com");
 
 }
 
